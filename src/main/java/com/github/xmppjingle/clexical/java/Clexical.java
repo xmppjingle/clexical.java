@@ -49,7 +49,7 @@ public class Clexical {
         letter.getPredicates().forEach(predicate -> hear(predicate));
     }
 
-    public void hear(final Predicate predicate){
+    private void hear(final Predicate predicate){
         final Predicate memory = scribe.recall(composeKey(predicate));
         if(memory!=null){
             pronounce(memory, predicate);
@@ -65,7 +65,7 @@ public class Clexical {
         herald.proclaim(letter);
     }
 
-    public String freshID(){
+    private String freshID(){
         return String.valueOf(counter.getAndIncrement());
     }
 
